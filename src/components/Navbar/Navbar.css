@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lemon", serif; /* Apply Lemon font */
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+a {
+  color: #000; /* Black color for text */
+  text-decoration: none;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.45em;
+}
+
+.main-nav {
+  margin-top: 5px;
+  display: flex;
+}
+
+.logo a,
+.main-nav a {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  color: #000; /* Black color for text */
+  font-size: 0.99em;
+  text-decoration: none;
+  position: relative; /* Add position relative for positioning the border */
+}
+
+.main-nav a:hover {
+  color: #000; /* Black color on hover */
+}
+
+/* Add the following CSS */
+.main-nav a:hover::after {
+  content: ''; /* Empty content for pseudo-element */
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Adjust this value to position the border close to text */
+  width: 100%;
+  height: 2px; /* Height of the border */
+  background-color: #000; /* Black color for the border */
+}
+
+.header {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: #e83940; /* Red background color */
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-nav {
+    margin-top: 10px;
+  }
+}

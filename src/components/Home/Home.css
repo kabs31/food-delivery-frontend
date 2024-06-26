@@ -1,0 +1,20 @@
+
+.header-box {
+  max-width: 800px; /* Adjust max-width as needed */
+  margin: 20px auto; /* Centers the container and adds space around it */
+  background-color: #e83940; /* Red background color */
+  color: #fff; /* White text color */
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+  text-align: center; /* Center aligns text */
+}
+
+.header-title {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.header-subtitle {
+  font-size: 1.1em;
+  font-style: italic;
+}
