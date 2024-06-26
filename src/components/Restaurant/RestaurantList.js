@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './RestaurantList.css';
+import config from '../Config/Config';
 
 const RestaurantList = () => {
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/restaurants')
+    fetch(`${config.BASE_URL}/api/restaurants`)
       .then(response => response.json())
       .then(data => setRestaurants(data))
       .catch(error => console.error('Error fetching restaurants:', error));
