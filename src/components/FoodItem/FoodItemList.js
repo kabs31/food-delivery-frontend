@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import './FoodItemList.css';
 import { useParams } from 'react-router-dom';
 import { CartContext } from '../Auth/CartProvider';
+import config from '../Config/Config';
 
 const FoodItemList = () => {
   const [foodItems, setFoodItems] = useState([]);
@@ -9,7 +10,7 @@ const FoodItemList = () => {
   const { addToCart, removeFromCart, cart } = useContext(CartContext);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/restaurants/fooditems/${restaurantId}`)
+    fetch(`${config.BASE_URL}/api/restaurants/fooditems/${restaurantId}`)
       .then(response => response.json())
       .then(data => setFoodItems(data))
       .catch(error => console.error('Error fetching food items:', error));

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './AddFoodItem.css'
+import config from '../Config/Config';
 
 const AddFoodItem = () => {
   const [foodItem, setFoodItem] = useState({
@@ -30,7 +31,7 @@ const AddFoodItem = () => {
     formData.append('foodItem', JSON.stringify(foodItem));
     formData.append('image', image);
 
-    axios.post('http://localhost:8080/api/restaurants/fooditems/admin/upload', formData, {
+    axios.post(`${config.BASE_URL}/api/restaurants/fooditems/admin/upload`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

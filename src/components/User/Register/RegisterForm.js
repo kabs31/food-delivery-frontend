@@ -3,6 +3,7 @@ import axios from 'axios';
 import './RegisterForm.css'; // Import the CSS file
 import { AuthContext } from '../../Auth/AuthProvider';
 import { useNavigate  } from 'react-router-dom';
+import config from '../../Config/Config';
 
 const RegisterForm = () => {
   const navigate = useNavigate(); 
@@ -22,7 +23,7 @@ const RegisterForm = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/users/register', user, { withCredentials: true });
+      const response = await axios.post(`${config.BASE_URL}/api/users/register`, user, { withCredentials: true });
       console.log('Registration successful:', response.data);
       handleRegister();
       

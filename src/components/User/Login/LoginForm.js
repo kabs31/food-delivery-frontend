@@ -4,7 +4,7 @@ import axios from 'axios';
 import './LoginForm.css'; // Import the CSS file
 import { useNavigate  } from 'react-router-dom';
 import { AuthContext } from '../../Auth/AuthProvider';
-
+import config from '../../Config/Config';
 
 const LoginForm = () => {
   const navigate = useNavigate(); 
@@ -22,7 +22,7 @@ const LoginForm = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/users/login', loginRequest, { withCredentials: true, crossDomain: true });
+      const response = await axios.post(`${config.BASE_URL}/api/users/login`, loginRequest, { withCredentials: true, crossDomain: true });
       console.log('Login successful:', response.data);
       // Call login function to update authentication status
       login();
